@@ -399,7 +399,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         .labelMedium
                                         .fontStyle,
                                   ),
-                          hintText: 'Hometown...',
+                          hintText: 'Instagram username...',
                           hintStyle:
                               FlutterFlowTheme.of(context).labelLarge.override(
                                     font: GoogleFonts.inter(
