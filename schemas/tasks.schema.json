@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/tasks.schema.json",
+  "title": "Task document (Firestore: tasks/{taskId})",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short task title."
+    },
+    "details": {
+      "type": "string",
+      "description": "Optional longer description.",
+      "default": ""
+    },
+    "completed": {
+      "type": "boolean",
+      "description": "Completion status."
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation timestamp (RFC3339)."
+    },
+    "user": {
+      "type": "string",
+      "description": "Reference path to the owning user document.",
+      "pattern": "^/users/[A-Za-z0-9_-]{6,}$"
+    }
+  },
+  "required": ["title", "completed", "created", "user"],
+  "examples": [
+    {
+      "title": "getting to champ in rl",
+      "details": "",
+      "completed": false,
+      "created": "2025-09-21T22:02:23Z",
+      "user": "/users/8M2Wy8Lskob5TSS1j2rMZWivmhp1"
+    }
+  ]
+}
